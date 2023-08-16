@@ -23,14 +23,19 @@
 void SW_voidInitialize(SW_str *Struct_pu8LedConfig)
 {
 	DIO_u8SetPinDirection(Struct_pu8LedConfig->Struct_enumPort, Struct_pu8LedConfig->Struct_enumPin, DIO_enumPIN_INPUT);
-	DIO_u8SetPinValue(Struct_pu8LedConfig->Struct_enumPort, Struct_pu8LedConfig->Struct_enumPin, Struct_pu8LedConfig->Struct_enumPullType);
+	if (Struct_pu8LedConfig->Struct_enumPullType == SW_enumPullUpInternal)
+	{
+		// seting up internal Pull-Up Resistor
+		DIO_u8SetPinValue(Struct_pu8LedConfig->Struct_enumPort, Struct_pu8LedConfig->Struct_enumPin, Struct_pu8LedConfig->Struct_enumPullType);
+	}
 }
 SW_Status SW_enumGetValue(SW_str *Struct_pu8LedConfig)
 {
 	DIO_PinValue SW_Status;
+
 	DIO_u8GetPinValue(Struct_pu8LedConfig->Struct_enumPort, Struct_pu8LedConfig->Struct_enumPin, &SW_Status);
 
-	if (Struct_pu8LedConfig->Struct_enumPullType == SW_enumPullUp && SW_Status == SW_enumOFF)
+	if ((Struct_pu8LedConfig->Struct_enumPullType == SW_enumPullUpExternal || Struct_pu8LedConfig->Struct_enumPullType == SW_enumPullUpInternal) && SW_Status == SW_enumOFF)
 	{
 		return SW_enumON;
 	}

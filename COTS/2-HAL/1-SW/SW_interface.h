@@ -46,7 +46,8 @@ typedef enum
 typedef enum
 {
 	SW_enumPullDown,
-	SW_enumPullUp
+	SW_enumPullUpExternal,
+	SW_enumPullUpInternal,
 } SW_PullType;
 typedef struct
 {
