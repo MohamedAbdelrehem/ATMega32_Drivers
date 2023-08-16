@@ -26,7 +26,7 @@ void SW_voidInitialize(SW_str *Struct_pu8LedConfig)
 	if (Struct_pu8LedConfig->Struct_enumPullType == SW_enumPullUpInternal)
 	{
 		// seting up internal Pull-Up Resistor
-		DIO_u8SetPinValue(Struct_pu8LedConfig->Struct_enumPort, Struct_pu8LedConfig->Struct_enumPin, Struct_pu8LedConfig->Struct_enumPullType);
+		DIO_u8SetPinValue(Struct_pu8LedConfig->Struct_enumPort, Struct_pu8LedConfig->Struct_enumPin, DIO_enumPIN_HIGH);
 	}
 }
 SW_Status SW_enumGetValue(SW_str *Struct_pu8LedConfig)
