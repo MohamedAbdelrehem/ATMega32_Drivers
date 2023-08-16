@@ -234,16 +234,16 @@ DIO_ErrorDetection DIO_u8TogglePinValue(DIO_PortGroup Copy_u8Port, DIO_PinNumber
         switch (Copy_u8Port)
         {
         case DIO_enumPORTA:
-            TOGGLE_BIT(DDRA, Copy_u8Pin);
+            TOGGLE_BIT(PORTA, Copy_u8Pin);
             break;
         case DIO_enumPORTB:
-            TOGGLE_BIT(DDRB, Copy_u8Pin);
+            TOGGLE_BIT(PORTB, Copy_u8Pin);
             break;
         case DIO_enumPORTC:
-            TOGGLE_BIT(DDRC, Copy_u8Pin);
+            TOGGLE_BIT(PORTC, Copy_u8Pin);
             break;
         case DIO_enumPORTD:
-            TOGGLE_BIT(DDRD, Copy_u8Pin);
+            TOGGLE_BIT(PORTD, Copy_u8Pin);
             break;
         default:
             Local_u8ErrorState = DIO_enumERROR;

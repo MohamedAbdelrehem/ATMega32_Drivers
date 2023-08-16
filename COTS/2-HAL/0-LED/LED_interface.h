@@ -57,11 +57,14 @@ typedef struct
     LED_PortGroup Strct_enumPort;
     LED_Pin Strct_enumPin;
     LED_ConnectionType Strct_enumConnectionType;
-
 } LED_str;
 
+void LED_voidInitialization(LED_str *Struct_pu8LedConfig);
+
 void LED_voidControl(LED_str *Struct_pu8LedConfig, LED_Value Copy_u8LedValue);
+
 void LED_voidToggle(LED_str *Struct_pu8LedConfig);
+
 void LED_voidTurnOn(LED_str *Struct_pu8LedConfig);
 void LED_voidTurnOff(LED_str *Struct_pu8LedConfig);
 

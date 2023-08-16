@@ -21,26 +21,61 @@
 #include "LED_config.h"
 #include "LED_private.h"
 
-void LED_voidControl(LED_str *Struct_pu8Led, LED_Value Copy_u8Value)
+void LED_voidInitialization(LED_str *Struct_pu8LedConfig)
 {
-    if (Copy_u8Value == LED_enumHIGH)
-    {
-        DIO_u8SetPinValue(Struct_pu8Led->Strct_enumPort, Struct_pu8Led->Strct_enumPin, DIO_enumPIN_HIGH);
-    }
-    else if (Copy_u8Value == LED_enumLOW)
-    {
-        DIO_u8SetPinValue(Struct_pu8Led->Strct_enumPort, Struct_pu8Led->Strct_enumPin, DIO_enumPIN_LOW);
-    }
+	DIO_u8SetPinDirection(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_OUTPUT);
 }
-void LED_voidToggle(LED_str *Struct_pu8Led)
+
+void LED_voidControl(LED_str *Struct_pu8LedConfig, LED_Value Copy_u8LedValue)
 {
-    DIO_u8TogglePinValue(Struct_pu8Led->Strct_enumPort, Struct_pu8Led->Strct_enumPin);
+	if (Copy_u8LedValue == LED_enumHIGH)
+	{
+		if (Struct_pu8LedConfig->Strct_enumConnectionType == LED_enumCON_SOURCE)
+		{
+			DIO_u8SetPinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_HIGH);
+		}
+		else if (Struct_pu8LedConfig->Strct_enumConnectionType == LED_enumCON_SINK)
+		{
+			DIO_u8SetPinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_LOW);
+		}
+	}
+	else if (Copy_u8LedValue == LED_enumLOW)
+	{
+		if (Struct_pu8LedConfig->Strct_enumConnectionType == LED_enumCON_SOURCE)
+		{
+			DIO_u8SetPinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_LOW);
+		}
+		else if (Struct_pu8LedConfig->Strct_enumConnectionType == LED_enumCON_SINK)
+		{
+			DIO_u8SetPinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_HIGH);
+		}
+	}
 }
-void LED_voidTurnOn(LED_str *Struct_pu8Led)
+void LED_voidToggle(LED_str *Struct_pu8LedConfig)
 {
-    DIO_u8SetPinValue(Struct_pu8Led->Strct_enumPort, Struct_pu8Led->Strct_enumPin, DIO_enumPIN_HIGH);
+	DIO_u8TogglePinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin);
 }
-void LED_voidTurnOff(LED_str *Struct_pu8Led)
+
+void LED_voidTurnOn(LED_str *Struct_pu8LedConfig)
 {
-    DIO_u8SetPinValue(Struct_pu8Led->Strct_enumPort, Struct_pu8Led->Strct_enumPin, DIO_enumPIN_LOW);
+
+	if (Struct_pu8LedConfig->Strct_enumConnectionType == LED_enumCON_SOURCE)
+	{
+		DIO_u8SetPinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_HIGH);
+	}
+	else if (Struct_pu8LedConfig->Strct_enumConnectionType == LED_enumCON_SINK)
+	{
+		DIO_u8SetPinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_LOW);
+	}
+}
+void LED_voidTurnOff(LED_str *Struct_pu8LedConfig)
+{
+	if (Struct_pu8LedConfig->Strct_enumConnectionType == LED_enumCON_SOURCE)
+	{
+		DIO_u8SetPinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_LOW);
+	}
+	else if (Struct_pu8LedConfig->Strct_enumConnectionType == LED_enumCON_SINK)
+	{
+		DIO_u8SetPinValue(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_HIGH);
+	}
 }
