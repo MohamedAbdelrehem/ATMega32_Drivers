@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "dio_private.h": "c",
-        "std_types.h": "c"
-    }
-}
