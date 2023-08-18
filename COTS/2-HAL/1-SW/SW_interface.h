@@ -49,7 +49,7 @@ typedef enum
 	SW_enumPullUpExternal,
 	SW_enumPullUpInternal,
 } SW_PullType;
-typedef struct
+typedef struct SW_str
 {
 	// Switch port
 	SW_PortGroup Struct_enumPort;
@@ -59,6 +59,6 @@ typedef struct
 	SW_PullType Struct_enumPullType;
 } SW_str;
 
-void SW_voidInitialize(SW_str *Struct_pu8LedConfig);
+void SW_voidInitialization(SW_str *Struct_pu8LedConfig);
 SW_Status SW_enumGetValue(SW_str *Struct_pu8LedConfig);
 #endif

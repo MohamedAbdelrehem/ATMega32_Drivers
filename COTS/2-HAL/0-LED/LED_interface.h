@@ -51,7 +51,7 @@ typedef enum
     LED_enumCON_SINK
 } LED_ConnectionType;
 
-typedef struct
+typedef struct LED_str
 {
     // Port,Pin,Sink/Source
     LED_PortGroup Strct_enumPort;

@@ -1,9 +1,6 @@
 {
     "files.associations": {
-        "sw_private.h": "c",
-        "std_types.h": "c",
-        "sw_config.h": "c",
-        "sw_interface.h": "c",
-        "dio_interface.h": "c"
+        "dio_private.h": "c",
+        "std_types.h": "c"
     }
 }
