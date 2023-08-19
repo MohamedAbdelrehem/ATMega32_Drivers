@@ -16,9 +16,14 @@
 #ifndef CLCD_INTERFACE_H_
 #define CLCD_INTERFACE_H_
 
+void CLCD_voidInit(void);
+
 void CLCD_voidSendCommand(u8 Copy_u8Command);
 void CLCD_voidSendData(u8 Copy_u8Data);
 
-void CLCD_voidInit(void);
+// const bec what he will pass will not be changed
+void CLCD_voidSendString(const u8 *Copy_pu8String);
+
+void CLCD_voidGoToXY(u8 Copy_u8XPos, u8 Copy_u8YPos);
 
 #endif
