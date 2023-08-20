@@ -58,7 +58,7 @@ typedef struct SSD_str
 #define SSD_MAX 10
 
 // Initialize SSD
-void SSD_voidInitialization(SSD_str *Struct_pu8SSDConfig);
+void SSD_voidInit(SSD_str *Struct_pu8SSDConfig);
 // function to set number
 void SSD_voidSetNumber(SSD_str *Struct_pu8SSDConfig, u8 Copy_u8SSDNumber);
 

@@ -7,65 +7,42 @@
 /*********************************************************************************************/
 /************************         Author: Mohamed Abdelrehem         *************************/
 /************************         Layer:  HAL                        *************************/
-/************************         SWC:    LED                        *************************/
+/************************         SWC:    KEYPAD                     *************************/
 /************************         Version:1.00                       *************************/
 /*********************************************************************************************/
 /*********************************************************************************************/
-#ifndef LED_INTERFACE_H_
-#define LED_INTERFACE_H_
 
-// Led output Value
+#ifndef KPD_INTERFACE_H
+#define KPD_INTERFACE_H
+
+// typedef enum
+// {
+//     KPD_enumB00,
+//     KPD_enumB01,
+//     KPD_enumB02,
+//     KPD_enumB03,
+//     KPD_enumB04,
+//     KPD_enumB05,
+//     KPD_enumB06,
+//     KPD_enumB07,
+//     KPD_enumB08,
+//     KPD_enumB09,
+//     KPD_enumB10,
+//     KPD_enumB11,
+//     KPD_enumB12,
+//     KPD_enumB13,
+//     KPD_enumB14,
+//     KPD_enumB15,
+//     KPD_enumINVALID
+// } KPD_Button;
+
 typedef enum
 {
-    LED_enumLOW,
-    LED_enumHIGH
-} LED_Value;
+    KPD_enumPRESSED,
+    KPD_enumNOT_PRESSED,
+} KPD_States;
 
-// Led Port
-typedef enum
-{
-    LED_enumPORTA,
-    LED_enumPORTB,
-    LED_enumPORTC,
-    LED_enumPORTD
-} LED_PortGroup;
-
-// Led Pin
-typedef enum
-{
-    LED_enumPIN0,
-    LED_enumPIN1,
-    LED_enumPIN2,
-    LED_enumPIN3,
-    LED_enumPIN4,
-    LED_enumPIN5,
-    LED_enumPIN6,
-    LED_enumPIN7
-} LED_Pin;
-
-// Sink/Source
-typedef enum
-{
-
-    LED_enumCON_SOURCE,
-    LED_enumCON_SINK
-} LED_ConnectionType;
-
-typedef struct LED_str
-{
-    // Port,Pin,Sink/Source
-    LED_PortGroup Strct_enumPort;
-    LED_Pin Strct_enumPin;
-    LED_ConnectionType Strct_enumConnectionType;
-} LED_str;
-
-void LED_voidInit(LED_str *Struct_pu8LedConfig);
-
-void LED_voidControl(LED_str *Struct_pu8LedConfig, LED_Value Copy_u8LedValue);
-
-void LED_voidToggle(LED_str *Struct_pu8LedConfig);
-
-void LED_voidTurnOn(LED_str *Struct_pu8LedConfig);
-void LED_voidTurnOff(LED_str *Struct_pu8LedConfig);
+void KPD_voidInit(void);
+u8 KPD_u8GetPressedKey(void);
 
 #endif

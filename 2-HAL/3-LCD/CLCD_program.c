@@ -98,3 +98,7 @@ void CLCD_voidGoToXY(u8 Copy_u8XPos, u8 Copy_u8YPos)
     /*Set bit number 7 to set DDRAM Address to write in specific location*/
     CLCD_voidSendCommand(Local_u8Address + 0b10000000);
 }
+
+// void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber)
+// {
+// }

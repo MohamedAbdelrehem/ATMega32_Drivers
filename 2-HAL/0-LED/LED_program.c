@@ -21,7 +21,7 @@
 #include "LED_config.h"
 #include "LED_private.h"
 
-void LED_voidInitialization(LED_str *Struct_pu8LedConfig)
+void LED_voidInit(LED_str *Struct_pu8LedConfig)
 {
 	DIO_u8SetPinDirection(Struct_pu8LedConfig->Strct_enumPort, Struct_pu8LedConfig->Strct_enumPin, DIO_enumPIN_OUTPUT);
 }

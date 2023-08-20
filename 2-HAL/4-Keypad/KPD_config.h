@@ -7,65 +7,32 @@
 /*********************************************************************************************/
 /************************         Author: Mohamed Abdelrehem         *************************/
 /************************         Layer:  HAL                        *************************/
-/************************         SWC:    LED                        *************************/
+/************************         SWC:    KEYPAD                     *************************/
 /************************         Version:1.00                       *************************/
 /*********************************************************************************************/
 /*********************************************************************************************/
-#ifndef LED_INTERFACE_H_
-#define LED_INTERFACE_H_
 
-// Led output Value
-typedef enum
-{
-    LED_enumLOW,
-    LED_enumHIGH
-} LED_Value;
+#ifndef KPD_CONFIG_H_
+#define KPD_CONFIG_H_
 
-// Led Port
-typedef enum
-{
-    LED_enumPORTA,
-    LED_enumPORTB,
-    LED_enumPORTC,
-    LED_enumPORTD
-} LED_PortGroup;
+#define KPD_PORT DIO_enumPORTA
 
-// Led Pin
-typedef enum
-{
-    LED_enumPIN0,
-    LED_enumPIN1,
-    LED_enumPIN2,
-    LED_enumPIN3,
-    LED_enumPIN4,
-    LED_enumPIN5,
-    LED_enumPIN6,
-    LED_enumPIN7
-} LED_Pin;
+#define KPD_COLUMN0_PIN DIO_enumPIN0
+#define KPD_COLUMN1_PIN DIO_enumPIN1
+#define KPD_COLUMN2_PIN DIO_enumPIN2
+#define KPD_COLUMN3_PIN DIO_enumPIN3
 
-// Sink/Source
-typedef enum
-{
+#define KPD_ROW0_PIN DIO_enumPIN4
+#define KPD_ROW1_PIN DIO_enumPIN5
+#define KPD_ROW2_PIN DIO_enumPIN6
+#define KPD_ROW3_PIN DIO_enumPIN7
 
-    LED_enumCON_SOURCE,
-    LED_enumCON_SINK
-} LED_ConnectionType;
+#define KPD_NOT_PRESSED 0xff
 
-typedef struct LED_str
-{
-    // Port,Pin,Sink/Source
-    LED_PortGroup Strct_enumPort;
-    LED_Pin Strct_enumPin;
-    LED_ConnectionType Strct_enumConnectionType;
-} LED_str;
-
-void LED_voidInit(LED_str *Struct_pu8LedConfig);
-
-void LED_voidControl(LED_str *Struct_pu8LedConfig, LED_Value Copy_u8LedValue);
-
-void LED_voidToggle(LED_str *Struct_pu8LedConfig);
-
-void LED_voidTurnOn(LED_str *Struct_pu8LedConfig);
-void LED_voidTurnOff(LED_str *Struct_pu8LedConfig);
+/*change it to the return value of each button you want*/
+#define KPD_ButtonsArr                                                  \
+    {                                                                   \
+        {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, { 13, 14, 15, 16 } \
+    }
 
 #endif

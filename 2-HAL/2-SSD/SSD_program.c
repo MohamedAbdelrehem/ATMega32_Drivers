@@ -21,7 +21,7 @@
 
 static u8 Local_u8SSDNumbers[10] = SSD_NUMBER_ARR;
 
-void SSD_voidInitialization(SSD_str *Struct_pu8SSDConfig)
+void SSD_voidInit(SSD_str *Struct_pu8SSDConfig)
 {
     DIO_u8SetPortDirection(Struct_pu8SSDConfig->Struct_enumDataPort, DIO_enumPORT_OUTPUT);
     DIO_u8SetPinDirection(Struct_pu8SSDConfig->Struct_enumEnablePort, Struct_pu8SSDConfig->Struct_enumEnablePin, DIO_enumPIN_OUTPUT);
