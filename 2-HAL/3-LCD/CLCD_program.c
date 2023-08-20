@@ -8,7 +8,7 @@
 /************************         Author: Mohamed Abdelrehem         *************************/
 /************************         Layer:  HAL                        *************************/
 /************************         SWC:    Character LCD              *************************/
-/************************         Version:1.00                       *************************/
+/************************         Version:1.10                       *************************/
 /*********************************************************************************************/
 /*********************************************************************************************/
 
@@ -98,7 +98,10 @@ void CLCD_voidGoToXY(u8 Copy_u8XPos, u8 Copy_u8YPos)
     /*Set bit number 7 to set DDRAM Address to write in specific location*/
     CLCD_voidSendCommand(Local_u8Address + 0b10000000);
 }
-
+void CLCD_voidClear(void)
+{
+    CLCD_voidSendCommand(0b00000001);
+}
 // void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber)
 // {
 // }

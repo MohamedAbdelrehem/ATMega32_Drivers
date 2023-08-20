@@ -27,12 +27,10 @@
 #define KPD_ROW2_PIN DIO_enumPIN6
 #define KPD_ROW3_PIN DIO_enumPIN7
 
-#define KPD_NOT_PRESSED 0xff
-
-/*change it to the return value of each button you want*/
-#define KPD_ButtonsArr                                                  \
-    {                                                                   \
-        {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, { 13, 14, 15, 16 } \
+/*config buttons layout*/
+#define KPD_ButtonsArr                                                       \
+    {                                                                        \
+        {7, 8, 9, '/'}, {4, 5, 6, 'x'}, {1, 2, 3, '-'}, { 'C', 0, 'E', '+' } \
     }
 
 #endif

@@ -15,31 +15,10 @@
 #ifndef KPD_INTERFACE_H
 #define KPD_INTERFACE_H
 
-// typedef enum
-// {
-//     KPD_enumB00,
-//     KPD_enumB01,
-//     KPD_enumB02,
-//     KPD_enumB03,
-//     KPD_enumB04,
-//     KPD_enumB05,
-//     KPD_enumB06,
-//     KPD_enumB07,
-//     KPD_enumB08,
-//     KPD_enumB09,
-//     KPD_enumB10,
-//     KPD_enumB11,
-//     KPD_enumB12,
-//     KPD_enumB13,
-//     KPD_enumB14,
-//     KPD_enumB15,
-//     KPD_enumINVALID
-// } KPD_Button;
-
 typedef enum
 {
-    KPD_enumPRESSED,
-    KPD_enumNOT_PRESSED,
+    KPD_enumPRESSED = 0,
+    KPD_enumNOT_PRESSED = 0xff
 } KPD_States;
 
 void KPD_voidInit(void);
