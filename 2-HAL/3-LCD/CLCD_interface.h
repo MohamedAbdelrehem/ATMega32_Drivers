@@ -16,6 +16,10 @@
 #ifndef CLCD_INTERFACE_H_
 #define CLCD_INTERFACE_H_
 
+#ifndef STD_TYPES_H_
+#include "../../4-LIB/STD_TYPES.h"
+#endif
+
 void CLCD_voidInit(void);
 
 void CLCD_voidSendCommand(u8 Copy_u8Command);
