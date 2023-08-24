@@ -7,30 +7,15 @@
 // /*********************************************************************************************/
 // /************************         Author: Mohamed Abdelrehem         *************************/
 // /************************         Layer:  MCAL                       *************************/
-// /************************         SWC:    EXTERNAL INTERUPT          *************************/
+// /************************         SWC:    Global Interrupt Enable    *************************/
 // /************************         Version:1.00                       *************************/
 // /*********************************************************************************************/
 // /*********************************************************************************************/
 
-#ifndef EXTI_PRIVATE_H_
-#define EXTI_PRIVATE_H_
+#ifndef GIE_INTERFACE_H_
+#define GIE_INTERFACE_H_
 
-/**********  ExtInterrupt Configuration  *********/
-/* choose the sense control mode:
-     1- EXTI_enumLowLevel
-     3- EXTI_enumFallingEdge
-     4- EXTI_enumRisingEdge
-     2- EXTI_enumAnyChange
-     5- EXTI_enumOFF                           */
+void GIE_voidEnable(void);
+void GIE_voidDisable(void);
 
-#define INT0_SENSE_MODE EXTI_enumFallingEdge
-#define INT1_SENSE_MODE EXTI_enumOFF
-
-/* choose the sense control mode:
-     1- EXTI_enumFallingEdge
-     2- EXTI_enumRisingEdge
-     3- EXTI_enumOFF
-*/
-#define INT2_SENSE_MODE EXTI_enumOFF
-
-#endif
+#endif /* GIE_INTERFACE_H_ */

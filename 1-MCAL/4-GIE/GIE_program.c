@@ -7,30 +7,22 @@
 // /*********************************************************************************************/
 // /************************         Author: Mohamed Abdelrehem         *************************/
 // /************************         Layer:  MCAL                       *************************/
-// /************************         SWC:    EXTERNAL INTERUPT          *************************/
+// /************************         SWC:    Global Interrupt Enable    *************************/
 // /************************         Version:1.00                       *************************/
 // /*********************************************************************************************/
 // /*********************************************************************************************/
 
-#ifndef EXTI_PRIVATE_H_
-#define EXTI_PRIVATE_H_
+#include "../../4-LIB/STD_TYPES.h"
+#include "../../4-LIB/BIT_MATH.h"
 
-/**********  ExtInterrupt Configuration  *********/
-/* choose the sense control mode:
-     1- EXTI_enumLowLevel
-     3- EXTI_enumFallingEdge
-     4- EXTI_enumRisingEdge
-     2- EXTI_enumAnyChange
-     5- EXTI_enumOFF                           */
+#include "GIE_interface.h"
+#include "GIE_register.h"
 
-#define INT0_SENSE_MODE EXTI_enumFallingEdge
-#define INT1_SENSE_MODE EXTI_enumOFF
-
-/* choose the sense control mode:
-     1- EXTI_enumFallingEdge
-     2- EXTI_enumRisingEdge
-     3- EXTI_enumOFF
-*/
-#define INT2_SENSE_MODE EXTI_enumOFF
-
-#endif
+void GIE_voidEnable(void)
+{
+	SET_BIT(SREG, SREG_I);
+}
+void GIE_voidDisable(void)
+{
+	CLR_BIT(SREG, SREG_I);
+}

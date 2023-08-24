@@ -16,16 +16,26 @@
 #ifndef EXTI_INTERFACE_H_
 #define EXTI_INTERFACE_H_
 
-typedef enum
-{
-    EXTI_enumLowLevel,
-    EXTI_enumFallingEdge,
-    EXTI_enumRisingEdge,
-    EXTI_enumAnyChange,
-    EXTI_enumOFF
+#ifndef STD_TYPES_H_
+#include "../../4-LIB/STD_TYPES.h"
+#endif
 
-} EXTI_SenseMode;
+#define EXTI_enumOFF 0
+#define EXTI_enumLowLevel 1
+#define EXTI_enumFallingEdge 2
+#define EXTI_enumRisingEdge 3
+#define EXTI_enumAnyChange 4
+
+typedef enum EXTI_IntereptPin
+{
+	EXTI_enumINT0,
+	EXTI_enumINT1,
+	EXTI_enumINT2
+} EXTI_IntereptPin;
 
 void EXTI_voidInterruptInit(void);
+void EXTI_voidInterruptPinEnable(EXTI_IntereptPin Copy_enumIntereptPin);
+void EXTI_voidInterruptPinDisable(EXTI_IntereptPin Copy_enumIntereptPin);
+u8 EXTI_u8InterruptFlagValue(EXTI_IntereptPin Copy_enumIntereptPin);
 
 #endif /* EXTI_INTERFACE_H_ */
