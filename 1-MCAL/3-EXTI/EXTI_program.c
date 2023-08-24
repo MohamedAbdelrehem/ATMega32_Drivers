@@ -15,10 +15,10 @@
 #include "../../4-LIB/STD_TYPES.h"
 #include "../../4-LIB/BIT_MATH.h"
 
-#include "EXTI_config.h"
 #include "EXTI_interface.h"
-#include "EXTI_private.h"
 #include "EXTI_register.h"
+#include "EXTI_config.h"
+#include "EXTI_private.h"
 
 void EXTI_voidInterruptInit(void)
 {

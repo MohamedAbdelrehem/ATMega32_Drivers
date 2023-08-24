@@ -23,7 +23,7 @@
      2- EXTI_enumAnyChange
      5- ExTI_enumOFF                           */
 
-#define INT0_SENSE_MODE ExTI_enumOFF
+#define INT0_SENSE_MODE EXTI_enumFallingEdge
 #define INT1_SENSE_MODE ExTI_enumOFF
 
 /* choose the sense control mode:
