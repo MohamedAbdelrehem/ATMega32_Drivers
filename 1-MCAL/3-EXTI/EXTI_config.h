@@ -16,9 +16,21 @@
 #define EXTI_PRIVATE_H_
 
 /**********  ExtInterrupt Configration  *********/
+/* choose the sense control mode:
+     1- EXTI_enumLowLevel
+     3- EXTI_enumFallingEdge
+     4- EXTI_enumRisingEdge
+     2- EXTI_enumAnyChange
+     5- ExTI_enumOFF                           */
 
-#define EXTERNAL_INTERRUPT0_STATUS 
+#define INT0_SENSE_MODE ExTI_enumOFF
+#define INT1_SENSE_MODE ExTI_enumOFF
 
-
+/* choose the sense control mode:
+     1- EXTI_enumFallingEdge
+     2- EXTI_enumRisingEdge
+     3- ExTI_enumOFF
+*/
+#define INT2_SENSE_MODE ExTI_enumOFF
 
 #endif

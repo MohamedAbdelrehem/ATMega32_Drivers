@@ -16,6 +16,16 @@
 #ifndef EXTI_INTERFACE_H_
 #define EXTI_INTERFACE_H_
 
-void EXTI_voidInit(void);
+typedef enum
+{
+    EXTI_enumLowLevel,
+    EXTI_enumFallingEdge,
+    EXTI_enumRisingEdge,
+    EXTI_enumAnyChange,
+    EXTI_enumOFF
+
+} EXTI_SenseMode;
+
+void EXTI_voidInterruptInit(void);
 
 #endif /* EXTI_INTERFACE_H_ */
