@@ -100,7 +100,7 @@ void CLCD_voidGoToXY(u8 Copy_u8XPos, u8 Copy_u8YPos)
 }
 void CLCD_voidClear(void)
 {
-    CLCD_voidSendCommand(0b00000001);
+    CLCD_voidSendCommand(0b00000001); // or (1)
 }
 // void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber)
 // {
