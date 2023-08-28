@@ -8,7 +8,7 @@
 /************************         Author: Mohamed Abdelrehem         *************************/
 /************************         Layer:  HAL                        *************************/
 /************************         SWC:    Character LCD              *************************/
-/************************         Version:1.10                       *************************/
+/************************         Version:1.20                       *************************/
 /*********************************************************************************************/
 /*********************************************************************************************/
 
@@ -102,6 +102,22 @@ void CLCD_voidClear(void)
 {
     CLCD_voidSendCommand(0b00000001); // or (1)
 }
-// void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber)
-// {
-// }
+void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber, u8 Copy_u8XPos, u8 Copy_u8YPos)
+{
+    u8 Local_u8CGRAMAddress = 0, Local_u8Iterator;
+    /* Calculate the CGRAM Address whose each block is 8 bytes */
+    Local_u8CGRAMAddress = Copy_u8BlockNumber * 8;
+
+    /* Send CG Ram address command to LCD, with setting 6 bits , clearing clearing bit 7 */
+    CLCD_voidSendCommand(Local_u8CGRAMAddress + 64);
+
+    /* Write the pattern into the CGRAM */
+    for (Local_u8Iterator = 0; Local_u8Iterator < 8; Local_u8Iterator++)
+    {
+        CLCD_voidSendData(Copy_pu8SpecialCharacter[Local_u8Iterator]);
+    }
+
+    CLCD_voidGoToXY(Copy_u8XPos, Copy_u8YPos);
+
+    CLCD_voidSendData(Copy_u8BlockNumber);
+}
