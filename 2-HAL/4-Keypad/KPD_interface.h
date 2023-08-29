@@ -15,11 +15,10 @@
 #ifndef KPD_INTERFACE_H
 #define KPD_INTERFACE_H
 
-
 typedef enum
 {
-    KPD_enumPRESSED =0,
-    KPD_enumNOT_PRESSED=0xff
+    KPD_enumPRESSED = 0,
+    KPD_enumNOT_PRESSED = 0xff
 } KPD_States;
 
 void KPD_voidInit(void);

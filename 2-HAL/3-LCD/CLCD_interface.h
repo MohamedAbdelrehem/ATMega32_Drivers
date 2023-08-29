@@ -8,13 +8,17 @@
 /************************         Author: Mohamed Abdelrehem         *************************/
 /************************         Layer:  HAL                        *************************/
 /************************         SWC:    Character LCD              *************************/
-/************************         Version:1.10                       *************************/
+/************************         Version:1.20                       *************************/
 /*********************************************************************************************/
 /*********************************************************************************************/
 
 /*Preprocessor file guard*/
 #ifndef CLCD_INTERFACE_H_
 #define CLCD_INTERFACE_H_
+
+#ifndef STD_TYPES_H_
+#include "../../4-LIB/STD_TYPES.h"
+#endif
 
 void CLCD_voidInit(void);
 
@@ -27,5 +31,5 @@ void CLCD_voidSendString(const u8 *Copy_pu8String);
 void CLCD_voidGoToXY(u8 Copy_u8XPos, u8 Copy_u8YPos);
 void CLCD_voidClear(void);
 
-// void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber);
+void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber, u8 Copy_u8XPos, u8 Copy_u8YPos);
 #endif
