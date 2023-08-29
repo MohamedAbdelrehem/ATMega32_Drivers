@@ -7,25 +7,31 @@
 /*********************************************************************************************/
 /************************         Author: Mohamed Abdelrehem         *************************/
 /************************         Layer:  HAL                        *************************/
-/************************         SWC:    Character LCD              *************************/
-/************************         Version:1.10                       *************************/
+/************************         SWC:    KEYPAD                     *************************/
+/************************         Version:1.00                       *************************/
 /*********************************************************************************************/
 /*********************************************************************************************/
 
-/*Preprocessor file guard*/
-#ifndef CLCD_INTERFACE_H_
-#define CLCD_INTERFACE_H_
+#ifndef KPD_CONFIG_H_
+#define KPD_CONFIG_H_
 
-void CLCD_voidInit(void);
+#define KPD_PORT DIO_enumPORTA
 
-void CLCD_voidSendCommand(u8 Copy_u8Command);
-void CLCD_voidSendData(u8 Copy_u8Data);
+#define KPD_COLUMN0_PIN DIO_enumPIN0
+#define KPD_COLUMN1_PIN DIO_enumPIN1
+#define KPD_COLUMN2_PIN DIO_enumPIN2
+#define KPD_COLUMN3_PIN DIO_enumPIN3
 
-// const bec what he will pass will not be changed
-void CLCD_voidSendString(const u8 *Copy_pu8String);
+#define KPD_ROW0_PIN DIO_enumPIN4
+#define KPD_ROW1_PIN DIO_enumPIN5
+#define KPD_ROW2_PIN DIO_enumPIN6
+#define KPD_ROW3_PIN DIO_enumPIN7
 
-void CLCD_voidGoToXY(u8 Copy_u8XPos, u8 Copy_u8YPos);
-void CLCD_voidClear(void);
 
-// void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber);
+/*config buttons layout*/
+#define KPD_ButtonsArr                                                  \
+    {                                                                   \
+        {7,8 , 9,  '/' }, { 4 ,  5 ,  6 ,  'x' }, { 1 ,  2 ,  3 ,  '-' }, {  'C' ,  0 ,  'E' ,  '+'  } \
+    }
+
 #endif

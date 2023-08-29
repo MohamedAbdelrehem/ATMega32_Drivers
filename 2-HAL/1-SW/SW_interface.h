@@ -59,6 +59,6 @@ typedef struct SW_str
 	SW_PullType Struct_enumPullType;
 } SW_str;
 
-void SW_voidInitialization(SW_str *Struct_pu8LedConfig);
+void SW_voidInit(SW_str *Struct_pu8LedConfig);
 SW_Status SW_enumGetValue(SW_str *Struct_pu8LedConfig);
 #endif

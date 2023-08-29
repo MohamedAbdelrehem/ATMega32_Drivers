@@ -7,25 +7,22 @@
 /*********************************************************************************************/
 /************************         Author: Mohamed Abdelrehem         *************************/
 /************************         Layer:  HAL                        *************************/
-/************************         SWC:    Character LCD              *************************/
-/************************         Version:1.10                       *************************/
+/************************         SWC:    KEYPAD                     *************************/
+/************************         Version:1.00                       *************************/
 /*********************************************************************************************/
 /*********************************************************************************************/
 
-/*Preprocessor file guard*/
-#ifndef CLCD_INTERFACE_H_
-#define CLCD_INTERFACE_H_
+#ifndef KPD_INTERFACE_H
+#define KPD_INTERFACE_H
 
-void CLCD_voidInit(void);
 
-void CLCD_voidSendCommand(u8 Copy_u8Command);
-void CLCD_voidSendData(u8 Copy_u8Data);
+typedef enum
+{
+    KPD_enumPRESSED =0,
+    KPD_enumNOT_PRESSED=0xff
+} KPD_States;
 
-// const bec what he will pass will not be changed
-void CLCD_voidSendString(const u8 *Copy_pu8String);
+void KPD_voidInit(void);
+u8 KPD_u8GetPressedKey(void);
 
-void CLCD_voidGoToXY(u8 Copy_u8XPos, u8 Copy_u8YPos);
-void CLCD_voidClear(void);
-
-// void CLCD_voidWriteSpecialCharacter(u8 *Copy_pu8SpecialCharacter, u8 Copy_u8BlockNumber);
 #endif

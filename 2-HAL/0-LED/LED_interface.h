@@ -59,7 +59,7 @@ typedef struct LED_str
     LED_ConnectionType Strct_enumConnectionType;
 } LED_str;
 
-void LED_voidInitialization(LED_str *Struct_pu8LedConfig);
+void LED_voidInit(LED_str *Struct_pu8LedConfig);
 
 void LED_voidControl(LED_str *Struct_pu8LedConfig, LED_Value Copy_u8LedValue);
 

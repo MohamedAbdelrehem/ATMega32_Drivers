@@ -20,7 +20,7 @@
 #include "SW_config.h"
 #include "SW_private.h"
 
-void SW_voidInitialization(SW_str *Struct_pu8LedConfig)
+void SW_voidInit(SW_str *Struct_pu8LedConfig)
 {
 	DIO_u8SetPinDirection(Struct_pu8LedConfig->Struct_enumPort, Struct_pu8LedConfig->Struct_enumPin, DIO_enumPIN_INPUT);
 	if (Struct_pu8LedConfig->Struct_enumPullType == SW_enumPullUpInternal)
