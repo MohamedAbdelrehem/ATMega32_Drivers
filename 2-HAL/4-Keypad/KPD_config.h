@@ -27,10 +27,11 @@
 #define KPD_ROW2_PIN DIO_enumPIN6
 #define KPD_ROW3_PIN DIO_enumPIN7
 
+
 /*config buttons layout*/
-#define KPD_ButtonsArr                                                       \
-    {                                                                        \
-        {7, 8, 9, '/'}, {4, 5, 6, 'x'}, {1, 2, 3, '-'}, { 'C', 0, 'E', '+' } \
+#define KPD_ButtonsArr                                                  \
+    {                                                                   \
+        {7,8 , 9,  '/' }, { 4 ,  5 ,  6 ,  'x' }, { 1 ,  2 ,  3 ,  '-' }, {  'C' ,  0 ,  'E' ,  '+'  } \
     }
 
 #endif

@@ -24,23 +24,23 @@
 void KPD_voidInit(void)
 {
 
-    /*set column pins as Output*/
-    DIO_u8SetPinDirection(KPD_PORT, KPD_COLUMN0_PIN, DIO_enumPIN_OUTPUT);
-    DIO_u8SetPinDirection(KPD_PORT, KPD_COLUMN1_PIN, DIO_enumPIN_OUTPUT);
-    DIO_u8SetPinDirection(KPD_PORT, KPD_COLUMN2_PIN, DIO_enumPIN_OUTPUT);
-    DIO_u8SetPinDirection(KPD_PORT, KPD_COLUMN3_PIN, DIO_enumPIN_OUTPUT);
-    /*set column pins High*/
+	/*set column pins as Output*/
+	DIO_u8SetPinDirection(KPD_PORT,KPD_COLUMN0_PIN,DIO_enumPIN_OUTPUT);
+	DIO_u8SetPinDirection(KPD_PORT,KPD_COLUMN1_PIN,DIO_enumPIN_OUTPUT);
+	DIO_u8SetPinDirection(KPD_PORT,KPD_COLUMN2_PIN,DIO_enumPIN_OUTPUT);
+	DIO_u8SetPinDirection(KPD_PORT,KPD_COLUMN3_PIN,DIO_enumPIN_OUTPUT);
+	/*set column pins High*/
     DIO_u8SetPinValue(KPD_PORT, KPD_COLUMN0_PIN, DIO_enumPIN_HIGH);
     DIO_u8SetPinValue(KPD_PORT, KPD_COLUMN1_PIN, DIO_enumPIN_HIGH);
     DIO_u8SetPinValue(KPD_PORT, KPD_COLUMN2_PIN, DIO_enumPIN_HIGH);
     DIO_u8SetPinValue(KPD_PORT, KPD_COLUMN3_PIN, DIO_enumPIN_HIGH);
 
-    /*set Rows pins as Input*/
-    DIO_u8SetPinDirection(KPD_PORT, KPD_ROW0_PIN, DIO_enumPIN_INPUT);
-    DIO_u8SetPinDirection(KPD_PORT, KPD_ROW1_PIN, DIO_enumPIN_INPUT);
-    DIO_u8SetPinDirection(KPD_PORT, KPD_ROW2_PIN, DIO_enumPIN_INPUT);
-    DIO_u8SetPinDirection(KPD_PORT, KPD_ROW3_PIN, DIO_enumPIN_INPUT);
-    /*set pull-up resistors with high */
+	/*set Rows pins as Input*/
+	DIO_u8SetPinDirection(KPD_PORT,KPD_ROW0_PIN,DIO_enumPIN_INPUT);
+	DIO_u8SetPinDirection(KPD_PORT,KPD_ROW1_PIN,DIO_enumPIN_INPUT);
+	DIO_u8SetPinDirection(KPD_PORT,KPD_ROW2_PIN,DIO_enumPIN_INPUT);
+	DIO_u8SetPinDirection(KPD_PORT,KPD_ROW3_PIN,DIO_enumPIN_INPUT);
+	/*set pull-up resistors with high */
     DIO_u8SetPinValue(KPD_PORT, KPD_ROW0_PIN, DIO_enumPIN_HIGH);
     DIO_u8SetPinValue(KPD_PORT, KPD_ROW1_PIN, DIO_enumPIN_HIGH);
     DIO_u8SetPinValue(KPD_PORT, KPD_ROW2_PIN, DIO_enumPIN_HIGH);
@@ -49,7 +49,7 @@ void KPD_voidInit(void)
 u8 KPD_u8GetPressedKey(void)
 {
     u8 Local_u8PressedKey, Local_u8ColumnIndex, Local_u8RowIndex;
-    KPD_States KPD_u8ButtonState = KPD_enumNOT_PRESSED;
+    KPD_States KPD_u8ButtonState=KPD_enumNOT_PRESSED;
     static u8 Local_u8KPDArr[KPD_ROW_SIZE][KPD_COLUMN_SIZE] = KPD_ButtonsArr;
     static u8 Local_u8KPDColumnArr[KPD_COLUMN_SIZE] = {KPD_COLUMN0_PIN, KPD_COLUMN1_PIN, KPD_COLUMN2_PIN, KPD_COLUMN3_PIN};
     static u8 Local_u8KPDRowArr[KPD_ROW_SIZE] = {KPD_ROW0_PIN, KPD_ROW1_PIN, KPD_ROW2_PIN, KPD_ROW3_PIN};
