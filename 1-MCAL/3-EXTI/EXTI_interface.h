@@ -20,12 +20,6 @@
 #include "../../4-LIB/STD_TYPES.h"
 #endif
 
-#define EXTI_enumOFF 0
-#define EXTI_enumLowLevel 1
-#define EXTI_enumFallingEdge 2
-#define EXTI_enumRisingEdge 3
-#define EXTI_enumAnyChange 4
-
 typedef enum EXTI_IntereptPin
 {
 	EXTI_enumINT0,
